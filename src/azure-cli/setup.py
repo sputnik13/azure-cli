@@ -119,10 +119,13 @@ setup(
     zip_safe=False,
     classifiers=CLASSIFIERS,
     scripts=[
-        'az',
-        'az.completion.sh',
-        'az.bat',
+        'az.completion.sh'
     ],
+    entry_points={
+        'console_scripts': [
+            'az = azure.cli.__main__'
+        ]
+    },
     packages=[
         'azure',
         'azure.cli',
